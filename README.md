@@ -1,7 +1,7 @@
 # Fork
 
 :construction::warning::construction:Important: This is a personal project and a port of ForkGG to Mac. Please
-use [Fork-legacy](https://github.com/ForkGG/Fork-legacy) For Current Windows Version.:construction::warning::construction:
+use [Fork-legacy](https://github.com/ForkGG/Fork-legacy) For Current Windows Version. :construction::warning::construction:
 
 This is the successor of Fork-legacy and aims to be a general purpose Minecraft Server Manager GUI, that allows
 individuals to host Minecraft servers with very little knowledge.
