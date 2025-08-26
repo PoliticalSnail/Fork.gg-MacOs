@@ -27,13 +27,7 @@ individuals to host Minecraft servers with very little knowledge.
 
 ## App structure
 
-This repository is only the backend part of the Fork App, which is the core application. There is also a frontend
-implemented in Blazor Webassambly found in the [ForkFrontend repository](https://github.com/ForkGG/ForkFrontend) and a
-common library hosted found in the [ForkCommon repository](https://github.com/ForkGG/ForkCommon).
-
-As both the backend and frontend are written in C# and specifically in .NET 6 we can use the common library as a shared
-space for both of them and that's why the objects, that are transported between them are there.
-
+This repository will be focused on fixing the original Fork.gg Front end and Backend instead of porting Fork Legacy. 
 ## Communications protocol
 
 Fork is based on two communication layers, the first one is a REST-API that is used to send commands from the frontend (
