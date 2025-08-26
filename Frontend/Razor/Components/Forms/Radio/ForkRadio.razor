@@ -1,0 +1,87 @@
+﻿@typeparam TModelValue where TModelValue : notnull
+@inherits AbstractForkInput<TModelValue>
+@using System.Diagnostics.CodeAnalysis
+@using ForkFrontend.Model.Enums
+@using ForkFrontend.Model.Forms
+@implements IValueListInput<TModelValue, string>
+
+<div class="mt-5">
+    <label class="text-new-offwhite opacity-75">@Label</label>
+    @if (RadioType == RadioType.ButtonRow)
+    {
+        <div class="flex flex-wrap gap-4 ml-1 mt-1">
+            @{ int index = 0; }
+            @foreach (ForkFormEntity<TModelValue, string> value in Values!)
+            {
+                <div>
+                    <input type="radio" name="@Name" id="@($"{Name}{index}")" class="hidden"
+                           @onchange="@(_ => CurrentValue = value.ModelValue)"/>
+                    <div class="flex">
+                        <label for="@($"{Name}{index}")"
+                               class="flex gap-2 items-center justify-center cursor-pointer px-4 py-0.5 @(CurrentValue != null && CurrentValue.Equals(value.ModelValue) ? "text-new-white bg-forkBlue-highlighted" : "bg-new-light_panel hover:text-new-white")">
+                            @if (value.Icon != null)
+                            {
+                                <span class="pr-2 font-normal icon">@value.Icon</span>
+                            }
+                            @if (LoadingByValue?.ContainsKey(value.ModelValue) == true && LoadingByValue[value.ModelValue])
+                            {
+                                <span>Loading @value.ViewValue...</span>
+                                <LoadingGifIcon Width="15"/>
+                            }
+                            else
+                            {
+                                <span>@value.ViewValue</span>
+                            }
+                        </label>
+                    </div>
+                </div>
+                index++;
+            }
+        </div>
+    }
+    else
+    {
+        <div class="ml-5 mt-2">
+            @{ int index = 0; }
+            @foreach (ForkFormEntity<TModelValue, string> value in Values!)
+            {
+                <div>
+                    <input type="radio" name="@Name" id="@($"{Name}{index}")"
+                           @onchange="@(_ => CurrentValue = value.ModelValue)"/>
+                    <label for="@($"{Name}{index}")">@value.ViewValue</label>
+                    @if (LoadingByValue?.ContainsKey(value.ModelValue) == true && LoadingByValue[value.ModelValue])
+                    {
+                        <LoadingGifIcon Width="15"/>
+                    }
+                </div>
+                index++;
+            }
+        </div>
+    }
+
+</div>
+
+@code {
+
+    [Parameter] public List<ForkFormEntity<TModelValue, string>>? Values { get; set; }
+
+    [Parameter] public RadioType RadioType { get; set; } = RadioType.Default;
+
+    [Parameter] public Dictionary<TModelValue, bool>? LoadingByValue { get; set; }
+
+    protected override bool TryParseValueFromString(string? value, out TModelValue result, [NotNullWhen(false)] out string? validationErrorMessage)
+    {
+        throw new NotSupportedException($"This component does not parse string inputs. Bind to the '{nameof(CurrentValue)}' property, not '{nameof(CurrentValueAsString)}'.");
+    }
+
+    /// <summary>
+    ///     Override to make sure <see cref="Values" /> is set
+    /// </summary>
+    public override Task SetParametersAsync(ParameterView parameters)
+    {
+        Task result = base.SetParametersAsync(parameters);
+        Values ??= new List<ForkFormEntity<TModelValue, string>>();
+        return result;
+    }
+
+}

@@ -1,0 +1,44 @@
+﻿@*
+Should be used with `IconTabControl`
+*@
+<div class="cursor-pointer size-14 bg-new-panel text-new-offwhite  @(IsActive ? "" : "opacity-30 hover:opacity-100")" @onclick="OnClick">
+    <div class=" flex justify-center items-center w-full h-full">
+        @* <span class="text-xl icon">@IconCharacter</span> *@
+        @Icon
+    </div>
+</div>
+
+@code {
+
+    [CascadingParameter] private IconTabControl? Parent { get; set; }
+
+    [Parameter] public RenderFragment? Icon { get; set; }
+
+    [Parameter] public char IconCharacter { get; set; }
+
+    [Parameter] public Type? RelatedType { get; set; }
+
+    private bool IsActive => Parent?.ActiveTab == this;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Parent == null)
+        {
+            throw new ArgumentNullException(nameof(Parent), "IconTab must exist within IconTabControl!");
+        }
+
+        await Parent.AddTabAsync(this);
+        await base.OnInitializedAsync();
+    }
+
+    private async Task OnClick()
+    {
+        if (Parent == null)
+        {
+            throw new ArgumentNullException(nameof(Parent), "IconTab must exist within IconTabControl!");
+        }
+
+        await Parent.SelectTabAsync(this);
+    }
+
+}

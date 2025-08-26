@@ -1,0 +1,173 @@
+﻿@using ForkCommon.Model.Entity.Enums
+@using ForkCommon.Model.Entity.Pocos
+@using ForkCommon.Model.Notifications.EntityNotifications
+@using ForkFrontend.Logic.Services.Connections
+@using ForkFrontend.Logic.Services.Managers
+@using ForkFrontend.Razor.Components.Entity.Tabs.SettingsTab
+@inject ILogger<Entity> Logger
+@inject EntityConnectionService EntityConnection
+
+<CascadingValue Value="Value">
+    <div class="flex h-full gap-2 text-new-offwhite">
+        @* Center Part *@
+        <div class="flex-1 flex flex-col">
+            @* Top Bar *@
+            <div class="flex gap-2 mb-2">
+                @* Entity Overview *@
+                <div class="flex-1 max-w-3xl p-2 bg-new-panel flex justify-between items-center">
+                    <div class="flex gap-2 p-1">
+                        <IconButton @ref="_startButton" IsDisabled="Value.Entity.Status != EntityStatus.Stopped"
+                                    Size="24" HoverColor="status-green" OnClickMethod="StartServer">
+                            <Icon>
+                                <StartIcon Width="16" Height="16"/>
+                            </Icon>
+                        </IconButton>
+                        <IconButton @ref="_stopButton" IsDisabled="Value.Entity.Status != EntityStatus.Started"
+                                    Size="24" HoverColor="status-red" OnClickMethod="StopServer">
+                            <Icon>
+                                <StopIcon Width="16" Height="16"/>
+                            </Icon>
+                        </IconButton>
+                        <IconButton @ref="_restartButton" IsDisabled="Value.Entity.Status != EntityStatus.Started"
+                                    Size="24" HoverColor="status-orange" OnClickMethod="RestartServer">
+                            <Icon>
+                                <RestartIcon Width="16" Height="16"/>
+                            </Icon>
+                        </IconButton>
+                    </div>
+                    <span class="font-bold text-md text-new-offwhite whitespace-nowrap">@Value.Entity.Name - @Value.Entity.Version</span>
+                    <IconButton Size="30" NoBackground="true" HoverColor="status-red"
+                                OnClickMethod="DeleteServer">
+                        <Icon>
+                            <DeleteIcon Width="24"/>
+                        </Icon>
+                    </IconButton>
+                </div>
+            </div>
+            <div class="flex h-full w-full">
+                @* Navigation *@
+                <IconTabControl OnTabSelected="EntityTabSelected" IsVertical="true">
+                    <IconTab RelatedType="typeof(ConsoleTab)">
+                        <Icon>
+                            <TerminalIcon Width="16" Height="16"/>
+                        </Icon>
+                    </IconTab>
+                    <IconTab RelatedType="typeof(SettingsTab)">
+                        <Icon>
+                            <SettingIcon Width="16" Height="16"/>
+                        </Icon>
+                    </IconTab>
+                    <IconTab>
+                        <Icon>
+                            <WorldIcon Width="16" Height="16"/>
+                        </Icon>
+                    </IconTab>
+                    <IconTab>
+                        <Icon>
+                            <PluginIcon Width="16" Height="16"/>
+                        </Icon>
+                    </IconTab>
+                </IconTabControl>
+                @* Content *@
+                @if (SelectedEntityTabType != null)
+                {
+                    <DynamicComponent Type="SelectedEntityTabType"></DynamicComponent>
+                }
+            </div>
+        </div>
+
+        @* Player list *@
+        @if (SelectedEntityTabType == typeof(ConsoleTab) && Value.Entity is Server)
+        {
+            <div class="w-60 flex flex-col mt-2">
+                @* Top Bar *@
+                <IconTabControl OnTabSelected="PlayerListTabSelected">
+                    <IconTab RelatedType="typeof(Playerlist)" IconCharacter="'p'"></IconTab>
+                    <IconTab RelatedType="typeof(Banlist)" IconCharacter="'b'"></IconTab>
+                    <IconTab RelatedType="typeof(Whitelist)" IconCharacter="'w'"></IconTab>
+                </IconTabControl>
+
+                @* Content *@
+                @if (SelectedPlayerListTabType != null)
+                {
+                    <DynamicComponent Type="SelectedPlayerListTabType"></DynamicComponent>
+                }
+            </div>
+        }
+    </div>
+
+</CascadingValue>
+
+@code {
+
+    [CascadingParameter] public required ForkErrorBoundary ErrorBoundary { get; set; }
+
+    [Parameter] [EditorRequired] public required EntityStateManager Value { get; set; }
+
+    private Type? SelectedEntityTabType { get; set; }
+    private Type? SelectedPlayerListTabType { get; set; }
+
+    private IconButton? _startButton;
+    private IconButton? _stopButton;
+    private IconButton? _restartButton;
+
+    protected override void OnInitialized()
+    {
+        Value.EntityStatusChangedNotificationHandler.After += HandleEntityStatusChange;
+    }
+
+    private void EntityTabSelected(IconTab tab)
+    {
+        SelectedEntityTabType = tab.RelatedType;
+    }
+
+    private void PlayerListTabSelected(IconTab tab)
+    {
+        SelectedPlayerListTabType = tab.RelatedType;
+    }
+
+    private async Task StartServer(IconButton button)
+    {
+        await ErrorBoundary.RunSavely(EntityConnection.StartEntityAsync(Value.Entity.Id));
+    }
+
+    private async Task StopServer(IconButton button)
+    {
+        await ErrorBoundary.RunSavely(EntityConnection.StopEntityAsync(Value.Entity.Id));
+    }
+
+    private async Task RestartServer(IconButton button)
+    {
+        await ErrorBoundary.RunSavely(EntityConnection.RestartEntityAsync(Value.Entity.Id));
+    }
+
+    private async Task DeleteServer(IconButton button)
+    {
+        await ErrorBoundary.RunSavely(EntityConnection.DeleteEntityAsync(Value.Entity));
+    }
+
+    private Task HandleEntityStatusChange(EntityStatusChangedNotification notification)
+    {
+        //TODO CKE FIXME Paramenters should not be set by parent but by child itself: https://stackoverflow.com/questions/58852101/bl0005-external-parameter-usage-why-is-a-warning-for-that
+        if (_startButton != null)
+        {
+            _startButton.IsDisabled = notification.NewEntityStatus != EntityStatus.Stopped;
+            _startButton.StateHasChanged();
+        }
+
+        if (_stopButton != null)
+        {
+            _stopButton.IsDisabled = notification.NewEntityStatus != EntityStatus.Started;
+            _stopButton.StateHasChanged();
+        }
+
+        if (_restartButton != null)
+        {
+            _restartButton.IsDisabled = notification.NewEntityStatus != EntityStatus.Started;
+            _restartButton.StateHasChanged();
+        }
+
+        return Task.CompletedTask;
+    }
+
+}

@@ -1,0 +1,35 @@
+﻿@using ForkFrontend.Logic.Services.Translation
+@inject TranslationService Translation
+
+<div class="navbar flex px-3 w-full bg-new-nav h-12">
+    @* Icon *@
+    <img class="w-fit" width="32" src="resources/img/Fork Icon.jpg"/>
+
+    @* Options *@
+    <nav class="flex content-center text-xs w-full">
+        <div class="p-4">
+            <NavLink href="" Match="NavLinkMatch.All">
+                <Translated Path="common.navbar.servers"></Translated>
+            </NavLink>
+        </div>
+        <div class="p-4">
+            <NavLink href="settings">
+                <Translated Path="common.navbar.settings"></Translated>
+            </NavLink>
+        </div>
+        <div class="p-4">
+            <NavLink href="discord">
+                <Translated Path="common.navbar.discord"></Translated>
+            </NavLink>
+        </div>
+        <div class="p-4">
+            <NavLink href="patreon">
+                <Translated Path="common.navbar.patreon"></Translated>
+            </NavLink>
+        </div>
+    </nav>
+</div>
+
+@code {
+
+}

@@ -1,0 +1,18 @@
+﻿@inherits LayoutComponentBase
+
+<div class="w-screen h-screen bg-new-black text-new-offwhite gap-2 flex flex-col select-none overflow-auto" style="min-width: 1080px; min-height: 720px;">
+
+    <ForkErrorBoundary>
+        <ChildContent>
+            @Body
+        </ChildContent>
+        <ErrorContent>
+            <div>
+                Oops! An unexpected error occured. Please report this to the Fork team and try restarting the app.
+            </div>
+        </ErrorContent>
+    </ForkErrorBoundary>
+</div>
+
+@code {
+}

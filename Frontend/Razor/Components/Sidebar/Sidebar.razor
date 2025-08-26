@@ -1,0 +1,122 @@
+﻿@using ForkCommon.Model.Entity.Enums
+@using ForkCommon.Model.Entity.Pocos
+@using ForkCommon.Model.Entity.Pocos.ServerSettings
+@using ForkCommon.Model.Payloads.Entity
+@using ForkFrontend.Logic.Services.Connections
+@using ForkFrontend.Logic.Services.Managers
+@using ForkFrontend.Model
+@using ForkFrontend.Model.Enums
+@using ForkFrontend.Razor.Components.Shared.Icons
+@using Index = Index
+@inject ILogger<Sidebar> Logger
+@inject EntityConnectionService EntityConnection
+@inject ToastManager ToastManager
+
+
+<div class="w-64 flex flex-col text-label">
+
+    @* Server List *@
+    <div class="bg-new-light_panel flex-1 flex flex-col">
+        @* Server *@
+        <div class="flex-1 overflow-y-auto scroll-left">
+            @if (EntityManagers != null)
+            {
+                @foreach (KeyValuePair<ulong, EntityStateManager> entityManager in EntityManagers)
+                {
+                    <SidebarEntity Value="@entityManager.Value" OnClickCallback="OnSelectEntity"
+                                   IsSelected="@(SelectedEntity?.Id == entityManager.Key)">
+                    </SidebarEntity>
+                }
+            }
+        </div>
+
+        @* Controls *@
+        <div class="flex justify-end gap-3 p-3">
+            <IconButton Size="45" OnClickMethod="() => { }">
+                <Icon>
+                    <ImportIcon Width="20" Height="20"/>
+                </Icon>
+            </IconButton> @*TODO CKE*@
+            <IconButton Size="45" OnClickMethod="OpenCreateEntityScreen">
+                <Icon>
+                    <CreateIcon Width="24" Height="24"/>
+                </Icon>
+            </IconButton>
+        </div>
+    </div>
+
+    @* For icon viewing
+    <div class="flex flex-1 flex-col">
+        <PaperTypeIcon Width="32" Height="32"></PaperTypeIcon>
+        <VanillaTypeIcon Width="32" Height="32"></VanillaTypeIcon>
+        <AddIcon Width="32" Height="32"></AddIcon>
+        <ImportIcon Width="32" Height="32"></ImportIcon>
+        <VelocityTypeIcon Width="32" Height="32"></VelocityTypeIcon>
+    </div> 
+    *@
+
+    @* Fork Version Checker *@
+    <div class="bg-new-panel flex gap-3 px-4 py-8 items-center" style="height: 50px">
+        <IconButton Size="45" OnClickMethod="() => { }" NoBackground="true">
+            <Icon><ForkSettingIcon Width="24" Height="24" /></Icon>
+        </IconButton>
+        <div class="flex-1 flex flex-col">
+            <span class="leading-none">v1.0.0</span>
+            <span class="text-xs">You are up to date</span>
+        </div>
+        @* TODO only show if update privilege is granted *@
+        @if (true)
+        {
+            <IconButton NoBackground="true" OnClickMethod="CheckForUpdate">
+                <Icon>
+                    <RestartIcon Width="20" Height="20"/>
+                </Icon>
+            </IconButton>
+        }
+    </div>
+</div>
+
+@code
+
+{
+    [Parameter] public Index? Parent { get; set; }
+
+    [Parameter] public EventCallback<IEntity> OnSelectEntity { get; set; }
+
+    [Parameter] public Dictionary<ulong, EntityStateManager>? EntityManagers { get; set; }
+
+    [CascadingParameter(Name = nameof(SelectedEntity))]
+    public IEntity? SelectedEntity { get; set; }
+
+    private int _counter = 0;
+
+    private async Task CheckForUpdate(IconButton button)
+    {
+        await ToastManager.AddToast(new Toast(ToastLevel.Warning, $"Not implemented yet! ({_counter++})", TimeSpan.FromSeconds(5)));
+        //Console.WriteLine(button.IconChar);
+    }
+
+    private Task OpenCreateEntityScreen(IconButton _)
+    {
+        Parent?.OpenAddEntityScreen();
+        return Task.CompletedTask;
+    }
+
+    private async Task CreateServerHandler(IconButton button)
+    {
+        CreateServerPayload createPayload = new();
+        createPayload.ServerName = "test";
+        createPayload.JavaSettings = new JavaSettings();
+        createPayload.ServerVersion = new ServerVersion { Build = 0, Type = VersionType.Vanilla, Version = "1.18.1", JarLink = "https://launcher.mojang.com/v1/objects/125e5adf40c659fd3bce3e66e67a16bb49ecc1b9/server.jar" };
+        createPayload.VanillaSettings = new VanillaSettings("world");
+
+        try
+        {
+            Logger.LogError(await EntityConnection.CreateServerAsync(createPayload) + "");
+        }
+        catch (Exception e)
+        {
+            Logger.LogError(e, "Error while creating server");
+        }
+    }
+}

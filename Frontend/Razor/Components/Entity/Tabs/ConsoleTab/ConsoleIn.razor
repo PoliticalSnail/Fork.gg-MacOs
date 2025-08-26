@@ -1,0 +1,62 @@
+﻿@using ForkFrontend.Logic.Services.Connections
+@using ForkFrontend.Logic.Services.Managers
+@inject EntityConnectionService EntityConnection
+
+<EditForm Model="@InputForm" OnSubmit="OnSubmit">
+    <div class="flex flex-col gap-2">
+        <div class="bg-new-black p-3 flex flex-1">
+            <span class="text-new-offwhite mr-1">@Prefix</span>
+            <Textfield class="flex-1" @bind-Value="@InputForm.Input" @oninput="SanitizeInput"></Textfield>
+        </div>
+        <Checkbox @bind-Value="@InputForm.SayMode" DisplayName="Chat"></Checkbox>
+
+        <button type="submit" disabled="@string.IsNullOrWhiteSpace(InputForm.Input)">Send</button>
+
+        <p class="text-sm text-gray-400 mt-1">
+            Command to send: '@(InputForm.SayMode ? $"/say {InputForm.Input}" : InputForm.Input ?? "")'
+        </p>
+    </div>
+</EditForm>
+
+@code {
+    [CascadingParameter] public EntityStateManager? EntityState { get; set; }
+
+    private ConsoleInput InputForm { get; set; } = new();
+
+    private string Prefix => InputForm.SayMode ? "/say " : "";
+
+    private async Task OnSubmit()
+    {
+        // Strip leading slash from input if SayMode is off
+        string trimmedInput = InputForm.SayMode ? InputForm.Input ?? "" : (InputForm.Input?.TrimStart('/') ?? "");
+
+        var command = InputForm.SayMode ? $"/say {trimmedInput}" : trimmedInput;
+
+        Console.WriteLine($"Sending command: '{command}'");
+
+        if (await EntityConnection.SubmitConsoleInAsync(command, EntityState!.Entity.Id))
+        {
+            InputForm.Input = "";
+        }
+    }
+
+    private void SanitizeInput(ChangeEventArgs e)
+    {
+        var value = e.Value?.ToString() ?? "";
+
+        if (!InputForm.SayMode)
+        {
+            InputForm.Input = value.TrimStart('/');
+        }
+        else
+        {
+            InputForm.Input = value;
+        }
+    }
+
+    private class ConsoleInput
+    {
+        public bool SayMode { get; set; }
+        public string? Input { get; set; }
+    }
+}

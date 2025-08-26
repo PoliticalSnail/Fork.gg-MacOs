@@ -1,0 +1,70 @@
+﻿@using ForkCommon.Model.Entity.Transient.Console.Commands
+@using ForkFrontend.Logic.Services.Connections
+@using ForkFrontend.Logic.Services.Managers
+@inject EntityConnectionService EntityConnection
+
+<EditForm Model="@InputForm" OnSubmit="OnSubmit">
+    <div class="flex flex-col gap-2">
+        <div class="bg-new-black p-3 flex flex-1">
+            <span class="text-new-offwhite mr-1">@Prefix</span>
+            <Textfield class="flex-1" @bind-Value="InputValue" @oninput="OnChange"></Textfield>
+        </div>
+        <Checkbox @bind-Value="@InputForm.SayMode" DisplayName="Chat"></Checkbox>
+    </div>
+</EditForm>
+
+@code {
+
+    [CascadingParameter] public EntityStateManager? EntityState { get; set; }
+
+    private ConsoleInput InputForm { get; set; } = new();
+
+    private Command? _commandForEntity;
+
+    private List<string> _possibleCompletes = new();
+
+    private string Prefix => InputForm.SayMode ? "/say " : "";
+
+    private string InputValue
+    {
+        get => InputForm.Input ?? "";
+        set
+        {
+            if (!InputForm.SayMode)
+                InputForm.Input = value.TrimStart('/');
+            else
+                InputForm.Input = value;
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        _commandForEntity = await EntityConnection.GetCommandsAsync(EntityState!.Entity.Id);
+
+        await base.OnInitializedAsync();
+    }
+
+    private async Task OnSubmit()
+    {
+        var commandToSend = InputForm.SayMode ? $"/say {InputForm.Input}" : InputForm.Input ?? "";
+
+        if (await EntityConnection.SubmitConsoleInAsync(commandToSend, EntityState!.Entity.Id))
+        {
+            InputForm.Input = "";
+        }
+    }
+
+    private async Task OnChange(ChangeEventArgs e)
+    {
+        // Optional: Log input value for debugging
+        Console.Out.WriteLine(e.Value);
+        // TODO: Add autocomplete logic here based on _commandForEntity and InputForm.Input
+    }
+
+    private class ConsoleInput
+    {
+        public bool SayMode { get; set; }
+        public string? Input { get; set; }
+    }
+
+}
