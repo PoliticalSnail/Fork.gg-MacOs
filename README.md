@@ -11,7 +11,7 @@ individuals to host Minecraft servers with very little knowledge.
 
 ## Key features
 
-- Platform independent (Runs on Windows, Mac and Linux)
+- Originally made for windows only fixed by me for MacOs
 - Clean and seamless UI
 - Free and Open Source (no hidden costs and everyone can contribute code)
 - Fast server setup (Most of the stuff is less than 5 clicks away)
