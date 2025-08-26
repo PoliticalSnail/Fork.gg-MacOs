@@ -1,0 +1,59 @@
+/* /Razor/Components/Shared/ToastDisplay.razor.rz.scp.css */
+.toast-element[b-kk3cabfdfl] {
+    position: relative;
+}
+
+.toast-element.added[b-kk3cabfdfl] {
+    -webkit-animation: fadeIn 500ms;
+    animation: fadein-b-kk3cabfdfl 500ms
+}
+
+.toast-element.removed[b-kk3cabfdfl] {
+    -webkit-animation: fadeout 500ms;
+    animation: fadeout-b-kk3cabfdfl 500ms;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {
+        right: -100px;
+        opacity: 0;
+    }
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein-b-kk3cabfdfl {
+    from {
+        right: -100px;
+        opacity: 0;
+    }
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        right: 0;
+        opacity: 1;
+    }
+    to {
+        right: -100px;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout-b-kk3cabfdfl {
+    from {
+        right: 0;
+        opacity: 1;
+    }
+    to {
+        right: -100px;
+        opacity: 0;
+    }
+}

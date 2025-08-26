@@ -1,0 +1,6 @@
+/Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/publish/appsettings.Development.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/publish/appsettings.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/publish/fork-electron/package-lock.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/publish/fork-electron/package.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/publish/package-lock.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/publish/web.config
