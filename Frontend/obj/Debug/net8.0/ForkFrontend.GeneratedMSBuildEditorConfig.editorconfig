@@ -13,329 +13,329 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = ForkFrontend
 build_property.RootNamespace = ForkFrontend
-build_property.ProjectDir = /Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/
+build_property.ProjectDir = /Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend
+build_property.MSBuildProjectDirectory = /Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Buttons/IconButton.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Buttons/IconButton.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9CdXR0b25zL0ljb25CdXR0b24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Entity/Entity.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Entity/Entity.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9FbnRpdHkvRW50aXR5LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/ConsoleIn.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/ConsoleIn.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9FbnRpdHkvVGFicy9Db25zb2xlVGFiL0NvbnNvbGVJbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/ConsoleOut.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/ConsoleOut.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9FbnRpdHkvVGFicy9Db25zb2xlVGFiL0NvbnNvbGVPdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/ConsoleTab.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/ConsoleTab.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9FbnRpdHkvVGFicy9Db25zb2xlVGFiL0NvbnNvbGVUYWIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/PerformanceMonitor.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/PerformanceMonitor.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9FbnRpdHkvVGFicy9Db25zb2xlVGFiL1BlcmZvcm1hbmNlTW9uaXRvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/Playerlist/Banlist.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/Playerlist/Banlist.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9FbnRpdHkvVGFicy9Db25zb2xlVGFiL1BsYXllcmxpc3QvQmFubGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/Playerlist/PlayerComponent.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/Playerlist/PlayerComponent.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9FbnRpdHkvVGFicy9Db25zb2xlVGFiL1BsYXllcmxpc3QvUGxheWVyQ29tcG9uZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/Playerlist/Playerlist.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/Playerlist/Playerlist.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9FbnRpdHkvVGFicy9Db25zb2xlVGFiL1BsYXllcmxpc3QvUGxheWVybGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/Playerlist/ServerPlayerComponent.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/Playerlist/ServerPlayerComponent.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9FbnRpdHkvVGFicy9Db25zb2xlVGFiL1BsYXllcmxpc3QvU2VydmVyUGxheWVyQ29tcG9uZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/Playerlist/Whitelist.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/Playerlist/Whitelist.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9FbnRpdHkvVGFicy9Db25zb2xlVGFiL1BsYXllcmxpc3QvV2hpdGVsaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Forms/Radio/ForkRadio.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Forms/Radio/ForkRadio.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9Gb3Jtcy9SYWRpby9Gb3JrUmFkaW8ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Forms/Select/ForkSelect.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Forms/Select/ForkSelect.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9Gb3Jtcy9TZWxlY3QvRm9ya1NlbGVjdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Forms/Text/ForkText.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Forms/Text/ForkText.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9Gb3Jtcy9UZXh0L0ZvcmtUZXh0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Inputs/Checkbox.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Inputs/Checkbox.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9JbnB1dHMvQ2hlY2tib3gucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Inputs/Textfield.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Inputs/Textfield.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9JbnB1dHMvVGV4dGZpZWxkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Navbar.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Navbar.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9OYXZiYXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Screens/CreateEntity/CreateEntityScreen.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Screens/CreateEntity/CreateEntityScreen.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TY3JlZW5zL0NyZWF0ZUVudGl0eS9DcmVhdGVFbnRpdHlTY3JlZW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/IconTab.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/IconTab.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvblRhYi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/IconTabControl.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/IconTabControl.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvblRhYkNvbnRyb2wucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/SelectedIndicatorVertical.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/SelectedIndicatorVertical.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvU2VsZWN0ZWRJbmRpY2F0b3JWZXJ0aWNhbC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Sidebar/Sidebar.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Sidebar/Sidebar.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaWRlYmFyL1NpZGViYXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Sidebar/SidebarEntity.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Sidebar/SidebarEntity.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaWRlYmFyL1NpZGViYXJFbnRpdHkucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Sidebar/StatusIndicator.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Sidebar/StatusIndicator.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaWRlYmFyL1N0YXR1c0luZGljYXRvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Translated.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Translated.razor]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9UcmFuc2xhdGVkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/App.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/AutocompleteConsoleIn.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Entity/Tabs/ConsoleTab/AutocompleteConsoleIn.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9FbnRpdHkvVGFicy9Db25zb2xlVGFiL0F1dG9jb21wbGV0ZUNvbnNvbGVJbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Entity/Tabs/SettingsTab/DefaultSettingsTab.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Entity/Tabs/SettingsTab/DefaultSettingsTab.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9FbnRpdHkvVGFicy9TZXR0aW5nc1RhYi9EZWZhdWx0U2V0dGluZ3NUYWIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Entity/Tabs/SettingsTab/SettingsTab.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Entity/Tabs/SettingsTab/SettingsTab.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9FbnRpdHkvVGFicy9TZXR0aW5nc1RhYi9TZXR0aW5nc1RhYi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Entity/Tabs/SettingsTab/VanillaSettingsTab.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Entity/Tabs/SettingsTab/VanillaSettingsTab.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9FbnRpdHkvVGFicy9TZXR0aW5nc1RhYi9WYW5pbGxhU2V0dGluZ3NUYWIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/LoadingOverlay.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/LoadingOverlay.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9Mb2FkaW5nT3ZlcmxheS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/AbstractForkComponent.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/AbstractForkComponent.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvQWJzdHJhY3RGb3JrQ29tcG9uZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/ContextMenuItem.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/ContextMenuItem.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvQ29udGV4dE1lbnVJdGVtLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/ForkErrorBoundary.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/ForkErrorBoundary.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvRm9ya0Vycm9yQm91bmRhcnkucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/AbstractIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/AbstractIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvQWJzdHJhY3RJY29uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/ArrowDownIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/ArrowDownIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvQXJyb3dEb3duSWNvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/CreateIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/CreateIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvQ3JlYXRlSWNvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/CubeTransparentIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/CubeTransparentIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvQ3ViZVRyYW5zcGFyZW50SWNvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/DeleteIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/DeleteIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvRGVsZXRlSWNvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/ErrorIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/ErrorIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvRXJyb3JJY29uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/FindIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/FindIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvRmluZEljb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/ForkSettingIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/ForkSettingIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvRm9ya1NldHRpbmdJY29uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/GlobeIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/GlobeIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvR2xvYmVJY29uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/ImportIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/ImportIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvSW1wb3J0SWNvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/InfoIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/InfoIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvSW5mb0ljb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/LoadingGifIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/LoadingGifIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvTG9hZGluZ0dpZkljb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/PaperTypeIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/PaperTypeIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvUGFwZXJUeXBlSWNvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/PluginIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/PluginIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvUGx1Z2luSWNvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/PurpurTypeIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/PurpurTypeIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvUHVycHVyVHlwZUljb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/RestartAltIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/RestartAltIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvUmVzdGFydEFsdEljb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/RestartIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/RestartIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvUmVzdGFydEljb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/SettingIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/SettingIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvU2V0dGluZ0ljb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/StartIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/StartIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvU3RhcnRJY29uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/StopIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/StopIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvU3RvcEljb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/SuccessIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/SuccessIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvU3VjY2Vzc0ljb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/TerminalIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/TerminalIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvVGVybWluYWxJY29uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/VanillaTypeIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/VanillaTypeIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvVmFuaWxsYVR5cGVJY29uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/VelocityTypeIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/VelocityTypeIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvVmVsb2NpdHlUeXBlSWNvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/WarningIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/WarningIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvV2FybmluZ0ljb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/WaterfallTypeIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/WaterfallTypeIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvV2F0ZXJmYWxsVHlwZUljb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/Icons/WorldIcon.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/Icons/WorldIcon.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvSWNvbnMvV29ybGRJY29uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/EmptyLayout.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/EmptyLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvRW1wdHlMYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Index.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/MainLayout.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Welcome.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Welcome.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvV2VsY29tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/_Imports.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-1/Frontend/Razor/Components/Shared/ToastDisplay.razor]
+[/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/Razor/Components/Shared/ToastDisplay.razor]
 build_metadata.AdditionalFiles.TargetPath = UmF6b3IvQ29tcG9uZW50cy9TaGFyZWQvVG9hc3REaXNwbGF5LnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-kk3cabfdfl
