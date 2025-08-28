@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "ForkFrontend",
   "resources": {
-    "hash": "sha256-m2qaH5uvpkzmJMYRLDCcStAtjiLBWicXCpVMJnxIiKs=",
+    "hash": "sha256-i1u4Z/ISXElg+UFfAo8PYh8jVmAwt35o+5FWrt1Evwc=",
     "jsModuleNative": {
       "dotnet.native.8.0.10.6gno4o4he3.js": "sha256-QVxMlY7ohmjgde/bZMA0dlWDAeuUP+tEfkiSdg4DFcE="
     },
@@ -215,12 +215,12 @@
       "mscorlib.wasm": "sha256-KvqZaNpjwhrOuzE4b4aMFsI+VUTyiWfoDI4zn4l9BM8=",
       "netstandard.wasm": "sha256-v+s7sWxtOM6bnOvC0jFrtnm6uMfbDymwl2nHNgbS2LM=",
       "System.Private.CoreLib.wasm": "sha256-pklll63uFQoY6vaD3vbluS9osYiJWLLLmob1yHFgepI=",
-      "ForkCommon.wasm": "sha256-MB7G8a+ZmAnhZRH+S3B49WFCPJI4V2qZcczt0vEJToM=",
-      "ForkFrontend.wasm": "sha256-pSK3PYBB7c+D8YvNpa+/CsR0T/XLjE9Cg2eyA9dAo2Q="
+      "ForkCommon.wasm": "sha256-MDoySkKPSQKt5osX1kE64AdGmJlXuJqkyUbbALwhc+E=",
+      "ForkFrontend.wasm": "sha256-PIDoe+/58Ejxkdq/W144VCjm07wesGVoe+wXcjj+xMQ="
     },
     "pdb": {
-      "ForkCommon.pdb": "sha256-WJqbY4/KwwBzkLjmUmFXHSCtXMYcwbpZfPZeI4Q08xQ=",
-      "ForkFrontend.pdb": "sha256-fiQgmbevanVBkUGLSTx0ncV60/AgOXhQDdFUrPNgXik="
+      "ForkCommon.pdb": "sha256-Am/1eGDhmAtFqUHjPTrTG8rEMZmv8XG/Cx62LFE1yOA=",
+      "ForkFrontend.pdb": "sha256-6Oq+tEsdGV3OraoAvVDWFQDvcaF23t8kpG8P+bq4m28="
     }
   },
   "cacheBootResources": true,

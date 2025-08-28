@@ -34,7 +34,7 @@ public class NotificationCenter
 
         FleckLog.LogAction = (level, message, exception) => { _logger.Log(MapLogLevel(level), exception, message); };
 
-        _server = new WebSocketServer("ws://0.0.0.0:35566");
+        _server = new WebSocketServer("ws://localhost:8080");
         // A Dictionary containing all active sockets and their privileges (or null if no token was provided yet)
         _privilegesByConnection = new Dictionary<IWebSocketConnection, IReadOnlySet<IPrivilege>?>();
         _server.RestartAfterListenError = true;
