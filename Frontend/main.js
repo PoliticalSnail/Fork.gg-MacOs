@@ -15,7 +15,7 @@ function createWindow() {
   });
 
   // Load your backend server URL that serves frontend + backend APIs
-  mainWindow.loadURL('http://localhost:8080');
+  mainWindow.loadURL('http://localhost:35565');
 }
 
 app.whenReady().then(() => {
