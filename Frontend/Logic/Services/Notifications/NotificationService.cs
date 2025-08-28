@@ -17,7 +17,7 @@ public class NotificationService
 
     private readonly CancellationTokenSource _cancellationTokenSource;
     private readonly ILogger<NotificationService> _logger;
-    private readonly Uri _webSocketUri = new("ws://localhost:8080");
+    private readonly Uri _webSocketUri = new("ws://localhost:35566");
     private ClientWebSocket? _webSocket;
 
     private WebsocketStatus _websocketStatus = WebsocketStatus.Disconnected;

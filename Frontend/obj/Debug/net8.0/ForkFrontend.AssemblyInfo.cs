@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ForkFrontend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f7849c739304cfa49bcfeecfad6d6d4ea055d07e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d50b63879a503c6de3a59b79fb333b0b2fc305cd")]
 [assembly: System.Reflection.AssemblyProductAttribute("ForkFrontend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ForkFrontend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
