@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T9FrlgKDZzA=",
+  "dgSpecHash": "BT9f2ShuuZc=",
   "success": true,
-  "projectFilePath": "/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/ForkFrontend.csproj",
+  "projectFilePath": "/Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/ForkFrontend.csproj",
   "expectedPackageFiles": [
     "/Users/gabrielgrundy/.nuget/packages/blazor.contextmenu/2.1.0/blazor.contextmenu.2.1.0.nupkg.sha512",
     "/Users/gabrielgrundy/.nuget/packages/jetbrains.annotations/2024.3.0/jetbrains.annotations.2024.3.0.nupkg.sha512",

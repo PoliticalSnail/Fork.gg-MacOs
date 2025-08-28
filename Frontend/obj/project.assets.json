@@ -2371,11 +2371,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/ForkFrontend.csproj",
+      "projectUniqueName": "/Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/ForkFrontend.csproj",
       "projectName": "ForkFrontend",
-      "projectPath": "/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/ForkFrontend.csproj",
+      "projectPath": "/Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/ForkFrontend.csproj",
       "packagesPath": "/Users/gabrielgrundy/.nuget/packages/",
-      "outputPath": "/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Frontend/obj/",
+      "outputPath": "/Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/gabrielgrundy/.nuget/NuGet/NuGet.Config"
@@ -2390,8 +2390,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Common/ForkCommon.csproj": {
-              "projectPath": "/Users/gabrielgrundy/Documents/GitHub/Fork.gg-MacOs-3/Common/ForkCommon.csproj"
+            "/Users/gabrielgrundy/Documents/GitHub/Fork/Common/ForkCommon.csproj": {
+              "projectPath": "/Users/gabrielgrundy/Documents/GitHub/Fork/Common/ForkCommon.csproj"
             }
           }
         }
