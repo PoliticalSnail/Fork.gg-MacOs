@@ -1,172 +1,158 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Net.WebSockets;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using ForkCommon.ExtensionMethods;
 using ForkCommon.Model.Notifications;
 using ForkFrontend.Model;
 using ForkFrontend.Model.Enums;
+using Microsoft.Extensions.Logging;
 
-namespace ForkFrontend.Logic.Services.Notifications;
-
-public class NotificationService
+namespace ForkFrontend.Logic.Services.Notifications
 {
-    public delegate void WebsocketStatusChangedHandler(WebsocketStatus newStatus);
-
-    private const int BUFFER_SIZE = 2048;
-
-    private readonly CancellationTokenSource _cancellationTokenSource;
-    private readonly ILogger<NotificationService> _logger;
-    private readonly Uri _webSocketUri = new("ws://localhost:35565");
-    private ClientWebSocket? _webSocket;
-
-    private WebsocketStatus _websocketStatus = WebsocketStatus.Disconnected;
-
-    public NotificationService(ILogger<NotificationService> logger)
+    public class NotificationService
     {
-        logger.LogInformation("Initializing NotificationService");
-        _logger = logger;
-        _cancellationTokenSource = new CancellationTokenSource();
-        RegisteredHandlers = new List<INotificationHandler>();
-    }
+        public delegate void WebsocketStatusChangedHandler(WebsocketStatus newStatus);
 
-    private WebsocketStatus WebsocketStatus
-    {
-        get => _websocketStatus;
-        set
+        private const int BUFFER_SIZE = 2048;
+        private readonly ILogger<NotificationService> _logger;
+        private readonly Uri _webSocketUri = new("ws://127.0.0.1:35565");
+        private ClientWebSocket? _webSocket;
+        private readonly CancellationTokenSource _cancellationTokenSource;
+        private WebsocketStatus _websocketStatus = WebsocketStatus.Disconnected;
+
+        private List<INotificationHandler> RegisteredHandlers { get; }
+
+        public event WebsocketStatusChangedHandler? WebsocketStatusChanged;
+
+        public NotificationService(ILogger<NotificationService> logger)
         {
-            _websocketStatus = value;
-            WebsocketStatusChanged?.Invoke(value);
-        }
-    }
-
-    private List<INotificationHandler> RegisteredHandlers { get; }
-    public event WebsocketStatusChangedHandler? WebsocketStatusChanged;
-
-    public void Register<T>(Func<T, Task> handler) where T : AbstractNotification
-    {
-        _logger.LogDebug($"Registering new NotificationHandler `{handler.Method.Name}` for {typeof(T)}");
-
-        if (RegisteredHandlers.FirstOrDefault(h => h.GetType() == typeof(NotificationHandler<T>)) is not
-            NotificationHandler<T> notificationHandler)
-        {
-            notificationHandler = new NotificationHandler<T>();
-            RegisteredHandlers.Add(notificationHandler);
+            _logger = logger;
+            _cancellationTokenSource = new CancellationTokenSource();
+            RegisteredHandlers = new List<INotificationHandler>();
+            _logger.LogInformation("NotificationService initialized");
         }
 
-        notificationHandler.Handlers.Add(handler);
-    }
-
-    public void Unregister<T>(object caller) where T : AbstractNotification
-    {
-        if (RegisteredHandlers.FirstOrDefault(h => h.GetType() == typeof(NotificationHandler<T>)) is
-            NotificationHandler<T> notificationHandler)
+        private WebsocketStatus WebsocketStatus
         {
-            int count = notificationHandler.Handlers.RemoveAll(f => f.Target == caller);
-            _logger.LogDebug(
-                $"Unregistered {count} NotificationHandlers for {typeof(T)}");
-        }
-    }
-
-    public async Task StartupAsync()
-    {
-        while (!_cancellationTokenSource.IsCancellationRequested)
-        {
-            _webSocket = new ClientWebSocket();
-            try
+            get => _websocketStatus;
+            set
             {
-                IAsyncEnumerable<string> messages = ConnectAsync(_cancellationTokenSource.Token);
-                await foreach (string message in messages) await HandleMessage(message);
-                WebsocketStatus = WebsocketStatus.Disconnected;
-                _logger.LogDebug("Websocket closed. Reconnecting in 500ms");
-                _webSocket.Abort();
-                _webSocket.Dispose();
-                await Task.Delay(500);
-            }
-            catch (Exception e)
-            {
-                _logger.LogDebug($"Error in Websocket: {e.Message}");
-                _webSocket.Abort();
-                _webSocket.Dispose();
-                await Task.Delay(500);
+                _websocketStatus = value;
+                WebsocketStatusChanged?.Invoke(value);
             }
         }
-    }
 
-    private async Task HandleMessage(string message)
-    {
-        AbstractNotification? notification = message.FromJson<AbstractNotification>();
-        if (notification == null)
+        public void Register<T>(Func<T, Task> handler) where T : AbstractNotification
         {
-            _logger.LogDebug("Can't handle notification because it was null");
-            return;
+            if (RegisteredHandlers.FirstOrDefault(h => h.GetType() == typeof(NotificationHandler<T>)) is not NotificationHandler<T> notificationHandler)
+            {
+                notificationHandler = new NotificationHandler<T>();
+                RegisteredHandlers.Add(notificationHandler);
+            }
+            notificationHandler.Handlers.Add(handler);
+            _logger.LogDebug($"Registered handler '{handler.Method.Name}' for {typeof(T)}");
         }
 
-        // Make sure only handlers of the notifications type are called
-        RegisteredHandlers.FirstOrDefault(h => h.Type == notification.GetType())?.CallHandlers(notification);
-    }
-
-    /// <summary>
-    ///     Connect to the websocket and begin yielding messages
-    ///     received from the connection.
-    /// </summary>
-    private async IAsyncEnumerable<string> ConnectAsync(
-        [EnumeratorCancellation] CancellationToken cancellationToken)
-    {
-        if (_webSocket == null)
+        public void Unregister<T>(object caller) where T : AbstractNotification
         {
-            yield break;
-        }
-
-        await _webSocket.ConnectAsync(_webSocketUri, cancellationToken);
-        WebsocketStatus = WebsocketStatus.Connected;
-        // TODO CKE actual token
-        await SendMessageAsync("dummyToken", cancellationToken);
-        ArraySegment<byte> buffer = new(new byte[BUFFER_SIZE]);
-        while (!cancellationToken.IsCancellationRequested)
-        {
-            WebSocketReceiveResult result;
-            await using MemoryStream ms = new();
-            do
+            if (RegisteredHandlers.FirstOrDefault(h => h.GetType() == typeof(NotificationHandler<T>)) is NotificationHandler<T> notificationHandler)
             {
-                result = await _webSocket.ReceiveAsync(buffer, cancellationToken);
-                Debug.Assert(buffer.Array != null);
-                ms.Write(buffer.Array, buffer.Offset, result.Count);
-            } while (!result.EndOfMessage);
-
-            ms.Seek(0, SeekOrigin.Begin);
-
-            yield return Encoding.UTF8.GetString(ms.ToArray());
-
-            if (result.MessageType == WebSocketMessageType.Close)
-            {
-                break;
+                int removed = notificationHandler.Handlers.RemoveAll(f => f.Target == caller);
+                _logger.LogDebug($"Unregistered {removed} handlers for {typeof(T)}");
             }
         }
-    }
 
-    private async Task SendMessageAsync(string message, CancellationToken cancellationToken)
-    {
-        if (WebsocketStatus != WebsocketStatus.Connected)
+        public async Task StartupAsync()
         {
-            _logger.LogError($"Failed to write WebSocket message. WebSocket is not connected!\n{message}");
-            return;
+            while (!_cancellationTokenSource.IsCancellationRequested)
+            {
+                _webSocket = new ClientWebSocket();
+                try
+                {
+                    await foreach (var message in ConnectAsync(_cancellationTokenSource.Token))
+                    {
+                        await HandleMessage(message);
+                    }
+                }
+                catch (Exception e)
+                {
+                    _logger.LogError($"WebSocket error: {e.Message}");
+                }
+                finally
+                {
+                    WebsocketStatus = WebsocketStatus.Disconnected;
+                    _webSocket?.Abort();
+                    _webSocket?.Dispose();
+                    _logger.LogInformation("Reconnecting in 500ms...");
+                    await Task.Delay(500);
+                }
+            }
         }
 
-        if (_webSocket == null || _webSocket.State != WebSocketState.Open)
+        private async Task HandleMessage(string message)
         {
-            _logger.LogError(
-                $"Failed to write WebSocket message. WebSocket connection is either not existent or closed!\n{message}");
-            return;
+            var notification = message.FromJson<AbstractNotification>();
+            if (notification == null)
+            {
+                _logger.LogDebug("Received null notification, ignoring");
+                return;
+            }
+
+            RegisteredHandlers.FirstOrDefault(h => h.Type == notification.GetType())?.CallHandlers(notification);
         }
 
-        byte[] messageInBytes = Encoding.UTF8.GetBytes(message);
-        _logger.LogDebug($"Sending message with {messageInBytes.Length} Bytes");
-        for (int i = 0; i < messageInBytes.Length; i += BUFFER_SIZE)
+        private async IAsyncEnumerable<string> ConnectAsync([EnumeratorCancellation] CancellationToken cancellationToken)
         {
-            ArraySegment<byte> chunk = new(messageInBytes.Skip(i).Take(BUFFER_SIZE).ToArray());
-            await _webSocket.SendAsync(chunk, WebSocketMessageType.Text, i + BUFFER_SIZE >= messageInBytes.Length,
-                cancellationToken);
+            if (_webSocket == null) yield break;
+
+            _logger.LogInformation($"Connecting to {_webSocketUri}...");
+            await _webSocket.ConnectAsync(_webSocketUri, cancellationToken);
+            WebsocketStatus = WebsocketStatus.Connected;
+            _logger.LogInformation("WebSocket connected");
+
+            // Send a dummy token immediately
+            await SendMessageAsync("dummyToken", cancellationToken);
+
+            var buffer = new ArraySegment<byte>(new byte[BUFFER_SIZE]);
+            while (!cancellationToken.IsCancellationRequested && _webSocket.State == WebSocketState.Open)
+            {
+                await using var ms = new MemoryStream();
+                WebSocketReceiveResult result;
+                do
+                {
+                    result = await _webSocket.ReceiveAsync(buffer, cancellationToken);
+                    Debug.Assert(buffer.Array != null);
+                    ms.Write(buffer.Array, buffer.Offset, result.Count);
+                } while (!result.EndOfMessage);
+
+                ms.Seek(0, SeekOrigin.Begin);
+                yield return Encoding.UTF8.GetString(ms.ToArray());
+
+                if (result.MessageType == WebSocketMessageType.Close) break;
+            }
+        }
+
+        private async Task SendMessageAsync(string message, CancellationToken cancellationToken)
+        {
+            if (_webSocket == null || _webSocket.State != WebSocketState.Open)
+            {
+                _logger.LogError("WebSocket is not connected, cannot send message");
+                return;
+            }
+
+            var bytes = Encoding.UTF8.GetBytes(message);
+            for (int i = 0; i < bytes.Length; i += BUFFER_SIZE)
+            {
+                var chunk = new ArraySegment<byte>(bytes.Skip(i).Take(BUFFER_SIZE).ToArray());
+                await _webSocket.SendAsync(chunk, WebSocketMessageType.Text, i + BUFFER_SIZE >= bytes.Length, cancellationToken);
+            }
+            _logger.LogDebug($"Sent message: {message}");
         }
     }
 }

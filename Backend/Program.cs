@@ -7,53 +7,52 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Fork;
-
-public class Program
+namespace Fork
 {
-    public static void Main(string[] args)
+    public class Program
     {
-        IHost host = CreateHostBuilder(args).Build();
-
-        //Migrate
-        using (IServiceScope scope = host.Services.CreateScope())
+        public static void Main(string[] args)
         {
-            IServiceProvider services = scope.ServiceProvider;
-            ILogger<Program> logger = services.GetRequiredService<ILogger<Program>>();
-            try
-            {
-                string persistencePath = Path.Combine(
-                    Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                    "ForkApp", "persistence");
-                DirectoryInfo persistenceDir = new(persistencePath);
-                if (!persistenceDir.Exists)
-                {
-                    persistenceDir.Create();
-                }
+            IHost host = CreateHostBuilder(args).Build();
 
-                FileInfo databaseFile = new(Path.Combine(persistencePath, "app.db"));
-                if (!databaseFile.Exists)
-                {
-                    databaseFile.Create().Close();
-                }
-
-                using ApplicationDbContext context = services.GetRequiredService<ApplicationDbContext>();
-                context.Database.Migrate();
-                logger.LogInformation("Finished database migration");
-            }
-            catch (Exception e)
+            // Migrate database
+            using (IServiceScope scope = host.Services.CreateScope())
             {
-                logger.LogError("Error while migrating database! Aborting...\n" + e);
-                return;
+                IServiceProvider services = scope.ServiceProvider;
+                ILogger<Program> logger = services.GetRequiredService<ILogger<Program>>();
+                try
+                {
+                    string persistencePath = Path.Combine(
+                        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                        "ForkApp", "persistence");
+
+                    Directory.CreateDirectory(persistencePath);
+
+                    string databaseFilePath = Path.Combine(persistencePath, "app.db");
+                    if (!File.Exists(databaseFilePath))
+                        File.Create(databaseFilePath).Close();
+
+                    using ApplicationDbContext context = services.GetRequiredService<ApplicationDbContext>();
+                    context.Database.Migrate();
+                    logger.LogInformation("Finished database migration");
+                }
+                catch (Exception e)
+                {
+                    logger.LogError("Error while migrating database! Aborting...\n" + e);
+                    return;
+                }
             }
+
+            host.Run();
         }
 
-        host.Run();
-    }
-
-    public static IHostBuilder CreateHostBuilder(string[] args)
-    {
-        return Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
+        public static IHostBuilder CreateHostBuilder(string[] args)
+        {
+            return Host.CreateDefaultBuilder(args)
+                       .ConfigureWebHostDefaults(webBuilder =>
+                       {
+                           webBuilder.UseStartup<Startup>(); // Reference the Startup.cs class
+                       });
+        }
     }
 }

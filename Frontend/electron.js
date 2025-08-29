@@ -10,7 +10,7 @@ function createWindow() {
     },
   });
 
-  mainWindow.loadURL('http://localhost:5199');
+  mainWindow.loadURL('http://localhost:8080');
 
   // Open DevTools on launch
   mainWindow.webContents.openDevTools();

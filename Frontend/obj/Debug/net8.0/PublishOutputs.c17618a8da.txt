@@ -1,0 +1,14 @@
+/Users/gabrielgrundy/Documents/GitHub/Fork/Backend/wwwroot/publish/web.config
+/Users/gabrielgrundy/Documents/GitHub/Fork/Backend/wwwroot/appsettings.Development.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Backend/wwwroot/appsettings.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Backend/wwwroot/fork-electron/package-lock.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Backend/wwwroot/fork-electron/package.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Backend/wwwroot/package-lock.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Backend/wwwroot/publish/appsettings.Development.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Backend/wwwroot/publish/appsettings.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Backend/wwwroot/publish/fork-electron/package-lock.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Backend/wwwroot/publish/fork-electron/package.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Backend/wwwroot/publish/package-lock.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Backend/wwwroot/publish/wwwroot/resources/translation.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Backend/wwwroot/publish/wwwroot/_framework/blazor.boot.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Backend/wwwroot/web.config

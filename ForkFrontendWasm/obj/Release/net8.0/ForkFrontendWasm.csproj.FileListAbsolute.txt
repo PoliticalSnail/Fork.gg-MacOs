@@ -1030,3 +1030,6 @@
 /Users/gabrielgrundy/Documents/GitHub/Fork/ForkFrontendWasm/obj/Release/net8.0/refint/ForkFrontendWasm.dll
 /Users/gabrielgrundy/Documents/GitHub/Fork/ForkFrontendWasm/obj/Release/net8.0/ForkFrontendWasm.pdb
 /Users/gabrielgrundy/Documents/GitHub/Fork/ForkFrontendWasm/obj/Release/net8.0/ref/ForkFrontendWasm.dll
+/Users/gabrielgrundy/Documents/GitHub/Fork/ForkFrontendWasm/bin/Release/net8.0/publish/web.config
+/Users/gabrielgrundy/Documents/GitHub/Fork/ForkFrontendWasm/bin/Release/net8.0/publish/wwwroot/sample-data/weather.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/ForkFrontendWasm/bin/Release/net8.0/publish/wwwroot/_framework/blazor.boot.json

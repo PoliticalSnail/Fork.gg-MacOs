@@ -1,0 +1,4 @@
+/Users/gabrielgrundy/Documents/GitHub/Fork/Backend/bin/Release/net8.0/wwwroot/publish/web.config
+/Users/gabrielgrundy/Documents/GitHub/Fork/Backend/bin/Release/net8.0/wwwroot/publish/wwwroot/sample-data/weather.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Backend/bin/Release/net8.0/wwwroot/publish/wwwroot/_framework/blazor.boot.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Backend/bin/Release/net8.0/wwwroot/web.config

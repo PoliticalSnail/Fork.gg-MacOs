@@ -17,7 +17,7 @@ builder.Logging.SetMinimumLevel(LogLevel.Debug);
 builder.Services.AddBlazorContextMenu();
 
 //TODO CKE replace with customizable backend port
-builder.Services.AddHttpClient<BackendClient>(client => client.BaseAddress = new Uri("http://localhost:35565"));
+builder.Services.AddHttpClient<BackendClient>(client => client.BaseAddress = new Uri("http://localhost:8080"));
 builder.Services.AddHttpClient<LocalClient>(client =>
     client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
 // All services are singletons so it's easier to use them and the whole Blazor App is one scope anyway

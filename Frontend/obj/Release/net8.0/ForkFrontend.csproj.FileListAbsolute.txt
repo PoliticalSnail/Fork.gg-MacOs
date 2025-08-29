@@ -1079,3 +1079,11 @@
 /Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/bin/Release/net8.0/fork-electron/package.json
 /Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/bin/Release/net8.0/appsettings.Development.json
 /Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/bin/Release/net8.0/appsettings.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/bin/Release/net8.0/publish/fork-electron/package-lock.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/bin/Release/net8.0/publish/web.config
+/Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/bin/Release/net8.0/publish/appsettings.Development.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/bin/Release/net8.0/publish/appsettings.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/bin/Release/net8.0/publish/fork-electron/package.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/bin/Release/net8.0/publish/package-lock.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/bin/Release/net8.0/publish/wwwroot/resources/translation.json
+/Users/gabrielgrundy/Documents/GitHub/Fork/Frontend/bin/Release/net8.0/publish/wwwroot/_framework/blazor.boot.json

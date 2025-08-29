@@ -14,35 +14,55 @@ public class ApplicationConnectionService : AbstractConnectionService
     }
 
     /// <summary>
-    ///     Get the main application state from the backend
-    ///     This should only be called once in the best case and the get updated on events by the websocket
+    /// Get the main application state from the backend.
+    /// This should only be called once in the best case and then updated via WebSocket events.
     /// </summary>
     public async Task<State> GetApplicationState()
     {
         Logger.LogDebug("Loading main state");
-        // TODO make this generic
+
         HttpResponseMessage responseMessage = await Client.GetAsync("/v1/application/state");
         string message = await responseMessage.Content.ReadAsStringAsync();
+
+        if (!responseMessage.IsSuccessStatusCode)
+        {
+            // Log full response to help debug server-side issues
+            Logger.LogError("Failed to get application state. Status: {StatusCode}, Body: {Body}", 
+                            responseMessage.StatusCode, message);
+            throw new ForkException($"Server returned {responseMessage.StatusCode}: {message}");
+        }
+
         try
         {
             State? result = message.FromJson<State>();
             if (result == null)
             {
-                throw new ForkException("Invalid response from server");
+                throw new ForkException("Invalid response from server: deserialized state was null");
             }
 
             return result;
         }
         catch (Exception e)
         {
+            Logger.LogError(e, "Error deserializing application state. Response body: {Body}", message);
             throw new ForkException("Invalid response from server", e);
         }
     }
 
     public async Task<string> GetIpAddress()
     {
-        Logger.LogDebug("Getting servers external Ip address");
+        Logger.LogDebug("Getting server's external IP address");
+
         HttpResponseMessage responseMessage = await Client.GetAsync("/v1/application/ip");
-        return await responseMessage.Content.ReadAsStringAsync();
+        string body = await responseMessage.Content.ReadAsStringAsync();
+
+        if (!responseMessage.IsSuccessStatusCode)
+        {
+            Logger.LogError("Failed to get IP. Status: {StatusCode}, Body: {Body}",
+                            responseMessage.StatusCode, body);
+            throw new ForkException($"Server returned {responseMessage.StatusCode}: {body}");
+        }
+
+        return body;
     }
 }

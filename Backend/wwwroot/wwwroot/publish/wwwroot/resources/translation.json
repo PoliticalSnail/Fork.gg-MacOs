@@ -1,0 +1,34 @@
+{
+  "common": {
+    "global": {
+      "loading": {
+        "default": {
+          "DEFAULT": "Loading...",
+          "german": "Lade..."
+        },
+        "creatingEntity": {
+          "DEFAULT": "Creating new server...",
+          "german": "Erstelle neuen Server..."
+        }
+      }
+    },
+    "navbar": {
+      "servers": {
+        "DEFAULT": "Servers",
+        "german": "Server"
+      },
+      "settings": {
+        "DEFAULT": "Settings",
+        "german": "Einstellungen"
+      },
+      "discord": {
+        "DEFAULT": "Discord",
+        "german": "Discord"
+      },
+      "patreon": {
+        "DEFAULT": "Patreon",
+        "german": "Patreon"
+      }
+    }
+  }
+}

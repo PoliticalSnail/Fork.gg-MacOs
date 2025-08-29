@@ -1,24 +1,65 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Fork.Logic.Managers;
 using ForkCommon.Model.Application;
 
-namespace Fork.Logic.Services.StateServices;
-
-public class ApplicationStateService
+namespace Fork.Logic.Services.StateServices
 {
-    private readonly ApplicationManager _applicationManager;
-    private readonly EntityManager _entityManager;
-
-    public ApplicationStateService(ApplicationManager applicationManager, EntityManager entityManager)
+    /// <summary>
+    /// Service to build the application state for frontend consumption
+    /// </summary>
+    public class ApplicationStateService
     {
-        _applicationManager = applicationManager;
-        _entityManager = entityManager;
+        private readonly ApplicationManager _applicationManager;
+        private readonly EntityManager _entityManager;
+
+        public ApplicationStateService(ApplicationManager applicationManager, EntityManager entityManager)
+        {
+            _applicationManager = applicationManager;
+            _entityManager = entityManager;
+        }
+
+        /// <summary>
+        /// Builds the full application state with concrete DTOs for serialization
+        /// </summary>
+        public async Task<StateDto> BuildAppState()
+        {
+            var entities = await _entityManager.ListAllEntities();
+
+            var dtoList = entities.Select(e => new EntityDto
+            {
+                Id = e.Id,
+                Name = e.Name ?? string.Empty,
+                Status = e.Status?.ToString() ?? "Unknown",
+                Version = e.Version?.ToString() ?? "Unknown"
+            }).ToList();
+
+            return new StateDto(dtoList);
+        }
     }
 
-    //TODO CKE check permission before adding stuff
-    public async Task<State> BuildAppState()
+    /// <summary>
+    /// DTO version of State for sending to frontend
+    /// </summary>
+    public class StateDto
     {
-        State result = new(await _entityManager.ListAllEntities());
-        return result;
+        public StateDto(List<EntityDto> entities)
+        {
+            Entities = entities;
+        }
+
+        public List<EntityDto> Entities { get; set; }
+    }
+
+    /// <summary>
+    /// DTO for safely serializing IEntity
+    /// </summary>
+    public class EntityDto
+    {
+        public ulong Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Status { get; set; } = "Unknown";
+        public string Version { get; set; } = "Unknown";
     }
 }
